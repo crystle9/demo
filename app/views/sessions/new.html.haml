@@ -1,0 +1,14 @@
+= form_for :session, :url => sessions_path do |f|
+  - if flash.now[:alert]
+    .error
+      = flash.now[:alert]
+  %p
+    = f.label :email, 'Email'
+    %br/
+    = f.text_field :email, :class => 'text'
+  %p
+    = f.label :password, 'Password'
+    %br/
+    = f.password_field :password, :class => 'text'
+  %p
+    = f.submit :value => 'Sign in', :class => 'ym-button'

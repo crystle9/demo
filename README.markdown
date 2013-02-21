@@ -1,0 +1,1 @@
+OK, e..., I've spent a lots time studying ruby, rails, html, haml, css, sass, cucumber and factory_gir, also git, heraku. Now I want to use what I've learned to build a simple web app.

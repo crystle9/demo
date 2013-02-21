@@ -1,0 +1,38 @@
+!!! 5
+%head
+  %title= title
+  = csrf_meta_tag
+  = stylesheet_link_tag 'form', :media => 'screen'
+  = stylesheet_link_tag 'yaml/core/base.css', :media => 'screen'
+  = stylesheet_link_tag 'yaml/core/base.css', :media => 'print'
+  = stylesheet_link_tag 'yaml/screen/screen-FULLPAGE-layout', :media => 'screen'
+  = stylesheet_link_tag 'yaml/forms/gray-theme.css', :media => 'screen'
+  = stylesheet_link_tag 'yaml/forms/gray-theme.css', :media => 'print'
+  = stylesheet_link_tag 'yaml/navigation/hlist.css', :media => 'screen'
+  = stylesheet_link_tag 'yaml/navigation/hlist.css', :media => 'print'
+  = javascript_include_tag "application.js"
+%body
+  %header
+    .ym-wrapper
+      .ym-wbox
+        %h1 诚爱大药房
+  %nav.nav
+    .ym-wrapper
+      .ym-hlist
+        %ul
+          %li= link_to 'home', root_path
+          %li= link_to 'contact', pages_contact_path
+          - if signed_in?
+            %li= link_to "Sign out", signout_path, :method => :delete
+          - else
+            %li= link_to "Sign in", signin_path
+  .main
+    .ym-wrapper
+      .ym-wbox
+        = yield
+  .footer
+    .ym-wrapper
+      .ym-wbox
+        = render 'layouts/footer'
+      
+
