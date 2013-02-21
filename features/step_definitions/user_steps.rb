@@ -22,8 +22,7 @@ Then /^if my password or email is incorrect$/ do
   click_button("Sign in")
 end
 
-Given /^my name is "(.*?)", email is "(.*?)", and password is "(.*?)"$/ do |name,email,password|
-  page.fill_in 'user[name]', :with => name
+Given /^my email is "(.*?)", and password is "(.*?)"$/ do |email,password|
   page.fill_in 'user[email]', :with => email
   page.fill_in 'user[password]', :with => password
   page.fill_in 'user[password_confirmation]', :with => password
@@ -36,7 +35,7 @@ end
 
 
 Then /^I? ?get the profile page$/ do
-  puts page.first('div.main').first('h1').text
+  puts page.first('div.main').text
   puts "there is a bug in sign_in feature"
 end
 

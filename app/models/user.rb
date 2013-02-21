@@ -22,11 +22,9 @@ Feature: authenticate user via id and salt
   require 'digest'
 
   attr_accessor :password
-  attr_accessible :email, :name, :password_confirmation, :password
+  attr_accessible :email, :password_confirmation, :password
   
   email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
-
-  validates :name, :presence => true
 
   # unique email, case_insensitive
   validates :email, :presence => true, :format => { :with => email_regex },
