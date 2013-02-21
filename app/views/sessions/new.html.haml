@@ -2,6 +2,9 @@
   - if flash.now[:alert]
     .error
       = flash.now[:alert]
+  - if flash[:notice]
+    .notice
+      = flash[:notice]
   %p
     = f.label :email, 'Email'
     %br/

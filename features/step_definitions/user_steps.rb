@@ -33,6 +33,10 @@ Then /^I\'ll be told "(.*?)" in "(.*?)"$/ do |info, place|
   find(place).should have_content rege
 end
 
+Then /^I should see  error_info "(.*?)"$/ do |info|
+  rege = Regexp.new '^.*'+info+'.*$'
+  find('div.error').should have_content rege
+end
 
 Then /^I? ?get the profile page$/ do
   puts page.first('div.main').text

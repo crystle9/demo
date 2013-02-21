@@ -5,4 +5,5 @@ include: sessions.helper
   Given I'm in the home page
   When I click link "Sign in"
   And complete a sign_in form correctly
+  And click button "Sign in"
   Then I get the profile page
