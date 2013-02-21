@@ -44,6 +44,3 @@ Given /^I have an account$/ do
   puts User.count
 end
 
-When /^I visit my profile but have not signed in$/ do
-  visit(user_path(@user))
-end
