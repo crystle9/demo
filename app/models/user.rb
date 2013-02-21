@@ -17,9 +17,15 @@ Else return nil
 
 Feature: authenticate user via id and salt
 
+Feature: user have his gravatar
+
 =end
   # for password encryption
   require 'digest'
+  
+  # for user's avatar
+  include Gravtastic
+  gravtastic
 
   attr_accessor :password
   attr_accessible :email, :password_confirmation, :password

@@ -58,3 +58,7 @@ Given /^I have an account$/ do
   @user = FactoryGirl.create(:user)
   puts User.count
 end
+
+When /^I visit my profile but have not signed in$/ do
+  visit(user_path(@user))
+end
