@@ -1,4 +1,6 @@
 - if flash[:notice]
   .success
     = flash[:notice]
+= image_tag current_user.gravatar_url
 = current_user.email
+
