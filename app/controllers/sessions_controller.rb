@@ -2,17 +2,17 @@ class SessionsController < ApplicationController
 
   def new
     @title = "Sign in"
+    @user = User.new
   end
 
   def create
-    user = User.authenticate(params[:session][:email],params[:session][:password])
-    if user.nil?
+    @user = User.authenticate(params[:session][:email],params[:session][:password])
+    if @user.nil?
       flash.now[:alert] = "Invalid email/password pair"
       @title = 'Error'
       render 'new'
     else
-      sign_in user
-      flash[:notice] = "Sign in success!"
+      sign_in @user
       redirect_to current_user
     end
   end
