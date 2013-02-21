@@ -15,6 +15,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new params[:user]
     if @user.save
+      @user.profile = Profile.create
       sign_in @user
       redirect_to current_user
     else

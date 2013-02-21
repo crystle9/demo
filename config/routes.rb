@@ -1,7 +1,10 @@
 Demo::Application.routes.draw do
 
-  resources :users
-  
+  resources :users, :only => [:show, :new, :create]
+
+  match '/users/:id/profile' => 'profiles#update', :via => :put, :as => 'update_profile'
+  match '/users/:id/edit_profile' => 'profiles#edit', :via => :get, :as => 'edit_profile'
+
   root :to => 'pages#home'
 
   get 'pages/home'

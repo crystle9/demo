@@ -23,6 +23,8 @@ Feature: authenticate user via id and salt
 
   attr_accessor :password
   attr_accessible :email, :password_confirmation, :password
+
+  has_one :profile, :dependent => :destroy
   
   email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 
