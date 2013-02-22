@@ -60,6 +60,10 @@ Feature: user have his gravatar
     (user && user.salt == cookie_salt) ? user : nil
   end
 
+  def self.admin_id
+    '9'
+  end
+
   private
 
     # give me password, I encipher it and save it in encrypted_password

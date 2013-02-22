@@ -28,6 +28,8 @@
             %li= link_to "Profile", edit_profile_path(current_user)
           - else
             %li= link_to "Sign in", signin_path
+          - if signed_in? User.admin_id
+            %li= link_to "Users", users_path
   .main
     .ym-wrapper
       .ym-wbox

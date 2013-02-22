@@ -1,0 +1,5 @@
+%ol#users
+  - @users.each do |u|
+    %li
+      = image_tag u.gravatar_url
+      = u.email

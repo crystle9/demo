@@ -59,3 +59,15 @@ Given /^I have an account$/ do
   puts User.count
 end
 
+Given /^I have an admin account$/ do
+  @user = FactoryGirl.create(:user, :id => 9)
+  puts User.first.id
+end
+
+Then /^I can see users in a list$/ do
+  within("div.main") do
+    all('ol.users li').map do |li|
+      puts li.text
+    end
+  end
+end

@@ -3,6 +3,12 @@ class UsersController < ApplicationController
 
   # for page protection
   before_filter :authenticate, :only => [:show]
+  before_filter :admin_authenticate, :only => [:index]
+
+  def index
+    @title = "Admin"
+    @users = User.all
+  end
 
   def new
     @title =  "Sign up"
@@ -35,5 +41,9 @@ class UsersController < ApplicationController
     # for page protection
     def authenticate
       deny_access unless signed_in? params[:id]
+    end
+
+    def admin_authenticate
+      deny_access unless signed_in? User.admin_id
     end
 end
