@@ -15,6 +15,10 @@ When /^I? ?complete a sign_in form correctly$/ do
   fill_in("session[password]", :with => User.first.password)
 end
 
+Then /^complete a edit_profile table$/ do
+  fill_in("profile[name]", :with => "my_new_name")
+end
+
 Then /^if my password or email is incorrect$/ do
   visit(new_session_path)
   fill_in("session[email]", :with => @user.email)
