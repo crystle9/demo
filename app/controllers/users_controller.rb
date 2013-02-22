@@ -27,13 +27,13 @@ class UsersController < ApplicationController
 
   def show
     @title = "Profile"
-    @user = User.find_by_id(params[:id])
+    @user = User.find_by_id params[:id]
   end
 
   private
 
     # for page protection
     def authenticate
-      deny_access unless signed_in?
+      deny_access unless signed_in? params[:id]
     end
 end

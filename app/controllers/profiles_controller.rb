@@ -1,6 +1,7 @@
 class ProfilesController < ApplicationController
 
   before_filter :authenticate
+    
 
   def edit
     @profile = Profile.find_by_user_id(params[:id])
@@ -16,6 +17,6 @@ class ProfilesController < ApplicationController
 
     # for page protection
     def authenticate
-      deny_access unless signed_in?
+      deny_access unless signed_in? params[:id]
     end
 end
