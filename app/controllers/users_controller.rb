@@ -7,7 +7,7 @@ class UsersController < ApplicationController
 
   def destroy
     @user = User.find_by_id(params[:id])
-    @user.destroy
+    @user.destroy unless @user.id.to_s == User.admin_id
     redirect_to users_path
   end
 
