@@ -61,7 +61,7 @@ Feature: user have his gravatar
   end
 
   def self.admin_id
-    '9'
+    '1'
   end
 
   private

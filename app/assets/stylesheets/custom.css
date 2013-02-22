@@ -1,6 +1,10 @@
 header{
-    background: rgb(102,128,64)
+    background: rgb(102,128,64);
 }
 .nav, .ym-hlist{
-    background: rgb(74,90,45)
+    background: rgb(74,90,45);
+}
+#users li img{
+    height: 40px;
+    width: 40px;
 }

@@ -23,6 +23,7 @@ end
 
 group :development do
   gem 'sass', '3.2.5'
+  gem 'faker', '1.1.2'
 end
 
 group :test do
