@@ -5,6 +5,12 @@ class UsersController < ApplicationController
   before_filter :authenticate, :only => [:show]
   before_filter :admin_authenticate, :only => [:index]
 
+  def destroy
+    @user = User.find_by_id(params[:id])
+    @user.destroy
+    redirect_to users_path
+  end
+
   def index
     @title = "Admin"
     @users = User.paginate(:page => params[:page], :per_page => 10)

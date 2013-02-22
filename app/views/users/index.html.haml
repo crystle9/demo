@@ -1,6 +1,7 @@
 %ul#users
-  - @users.each do |u|
+  - @users.each do |user|
     %li
-      = image_tag u.gravatar_url
-      = u.profile.name
+      = image_tag user.gravatar_url
+      = user.profile.name
+      = link_to "delete", user, :method => :delete, :confirm => "You sure?", :title => "Delete #{user.profile.name}"
 = will_paginate @users
