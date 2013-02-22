@@ -15,7 +15,7 @@ namespace :db do
 			 User.create!(	    :email => email,
 					    :password => password,
 					    :password_confirmation => password)
-			Profile.create!(:name => name, :user_id => n)
+			Profile.create!(:name => name, :user_id => n+2)
 			
 		end
 	end
