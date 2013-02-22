@@ -2,6 +2,10 @@ Given /^I\'m in the home page$/ do
   visit(root_path)
 end
 
+When /^I? ?visit path "(.*?)"$/ do |path|
+  visit(path)
+end
+
 When /^I? ?click link "(.*?)"$/ do |link|
   find_link(link).click
 end
@@ -39,6 +43,10 @@ end
 
 Then /^I should see error_info$/ do
   puts find('div.error').text
+end
+
+Then /^I should see a notice$/ do
+  puts find('div.notice').text
 end
 
 Then /^I? ?get the profile page$/ do

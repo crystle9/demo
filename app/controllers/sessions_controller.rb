@@ -1,6 +1,9 @@
 class SessionsController < ApplicationController
 
   def new
+    if signed_in?
+      redirect_to current_user, :notice => "You have signed in"
+    end
     @title = "Sign in"
     @user = User.new
   end
