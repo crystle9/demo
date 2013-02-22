@@ -27,7 +27,7 @@ class UsersController < ApplicationController
 
   def show
     @title = "Profile"
-    @user = User.find_by_id params[:id]
+    @user = User.find_by_id(params[:id])
   end
 
   private

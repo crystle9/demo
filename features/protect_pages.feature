@@ -1,5 +1,5 @@
 Feature: protect pages
 Scenario: prevent user visit profile without authentication
 Given I have an account
-When I visit my profile but have not signed in
-Then I'll be told "have not signed in" in "div.error"
+When I visit path "/users/1/edit_profile"
+Then I should see a notice

@@ -1,7 +1,6 @@
 class ProfilesController < ApplicationController
 
   before_filter :authenticate
-    
 
   def edit
     @profile = Profile.find_by_user_id(params[:id])
